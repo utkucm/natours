@@ -1,5 +1,6 @@
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 const express = require('express');
 const helmet = require('helmet');
 const hpp = require('hpp');
@@ -33,6 +34,10 @@ const viewRouter = require('./routes/viewRoutes');
 /**
  * @GLOBAL_MIDDLEWARES
  */
+// Implement CORS
+app.use(cors());
+app.options('*', cors());
+
 // Setting Up Static File Server
 app.use(express.static(path.join(__dirname, 'public')));
 
