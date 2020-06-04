@@ -6587,7 +6587,7 @@ exports.displayMap = void 0;
 
 /* eslint-disable */
 var displayMap = function displayMap(locations) {
-  mapboxgl.accessToken = 'pk.eyJ1IjoicmV0aGphIiwiYSI6ImNrOXNuZXE4NjAzdHEzZ29kaDdjdzRhMTcifQ.upe20qesUMxfUfPwzng4sQ';
+  mapboxgl.accessToken = "pk.eyJ1IjoicmV0aGphIiwiYSI6ImNrOXNuZXE4NjAzdHEzZ29kaDdjdzRhMTcifQ.upe20qesUMxfUfPwzng4sQ";
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/rethja/ck9snkxoj00ou1iph1tr21vtm',
@@ -8607,7 +8607,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var stripe = Stripe('pk_test_Eyll0vw8VLPKQqDmc8Km1CGv00YoJ7dFdF');
+var stripe = Stripe("pk_test_Eyll0vw8VLPKQqDmc8Km1CGv00YoJ7dFdF");
 
 var bookTour = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(tourId) {
@@ -9032,7 +9032,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51600" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51605" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
