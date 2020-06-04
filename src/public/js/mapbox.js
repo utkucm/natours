@@ -1,11 +1,10 @@
 /* eslint-disable */
 export const displayMap = (locations) => {
-  mapboxgl.accessToken =
-    'pk.eyJ1IjoicmV0aGphIiwiYSI6ImNrOXNuZXE4NjAzdHEzZ29kaDdjdzRhMTcifQ.upe20qesUMxfUfPwzng4sQ';
+  mapboxgl.accessToken = process.env.MAPBOX_KEY;
 
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/rethja/ck9snkxoj00ou1iph1tr21vtm',
+    style: process.env.MAPBOX_STYLE,
     scrollZoom: false,
     // center: [-118.113491, 34.111745],
     // zoom: 10,
