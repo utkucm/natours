@@ -1,9 +1,10 @@
-const path = require('path');
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const helmet = require('helmet');
 const hpp = require('hpp');
 const morgan = require('morgan');
 const mongoSanitize = require('express-mongo-sanitize');
+const path = require('path');
 const rateLimit = require('express-rate-limit');
 const xss = require('xss-clean');
 
@@ -19,6 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
  * Importing Routes from their Seperate Files
  * @ROUTE_IMPORTS
  */
+const bookingRouter = require('./routes/bookingRoutes');
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
@@ -68,10 +70,13 @@ app.use(
 
 // Body Parser & Limiting Request Data
 app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(cookieParser());
 
 // Test Middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
+  // console.log(req.cookies);
   next();
 });
 
@@ -83,6 +88,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/bookings', bookingRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can not find ${req.originalUrl} on this server!`, 404));
