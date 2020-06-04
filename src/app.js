@@ -11,7 +11,7 @@ const xss = require('xss-clean');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 
-// Mounts express app
+// Mounts express application
 const app = express();
 
 app.set('view engine', 'pug');
