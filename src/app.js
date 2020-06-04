@@ -1,4 +1,5 @@
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 const express = require('express');
 const helmet = require('helmet');
 const hpp = require('hpp');
@@ -73,6 +74,9 @@ app.use(
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
+
+// Compressing text responses
+app.use(compression());
 
 // Test Middleware
 app.use((req, res, next) => {
