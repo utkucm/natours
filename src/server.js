@@ -4,10 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './.env' });
 const app = require('./app');
 
-const DB = process.env.DATABASE.replace(
-  '<password>',
-  process.env.DATABASE_PASSWORD
-);
+const DB = process.env.DATABASE.replace('<password>', process.env.DATABASE_PASSWORD);
 
 mongoose
   .connect(DB, {
@@ -25,9 +22,7 @@ mongoose
  * @SERVER_INITIALIZING
  */
 const PORT = process.env.PORT || 3000;
-const server = app.listen(PORT, () =>
-  console.log(`App mounted on port: ${PORT}!`)
-);
+const server = app.listen(PORT, () => console.log(`App mounted on port: ${PORT}!`));
 
 process.on('unhandledRejection', (err) => {
   console.log('UNDHANDLED REJECTION!!! 🔥 Shutting down...');
