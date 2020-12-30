@@ -27,4 +27,4 @@ npm start:dev
 
 # A screenshot of tour details page
 
-![alt text](https://github.com/utkucmm/natours/blob/master/ss.png?raw=true)
+![alt text](./ss.png)
