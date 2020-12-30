@@ -27,4 +27,4 @@ npm start:dev
 
 # A screenshot of tour details page
 
-![alt text](./ss.png)
+![alt text](./src/public/ss.png)
