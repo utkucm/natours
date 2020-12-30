@@ -42,7 +42,8 @@
     "slugify": "^1.4.0",
     "stripe": "^8.56.0",
     "validator": "^13.0.0",
-    "xss-clean": "^0.1.1"
+    "xss-clean": "^0.1.1",
+    "node-forge": "^0.10.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
